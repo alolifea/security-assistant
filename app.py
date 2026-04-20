@@ -10,8 +10,8 @@ import os
 
 # ========== AI 配置（硅基流动，免费）==========
 # 注册：https://siliconflow.cn 获取 API Key（以 sk- 开头）
-SILICONFLOW_API_KEY = "sk-sjaktbjcpabeztkzxlgpgeqathlpmhqugkqvvyxgnuebbusm"
-
+import os
+SILICONFLOW_API_KEY = os.getenv("SILICONFLOW_API_KEY", "")
 def call_ai(prompt):
     """调用硅基流动 DeepSeek-V2.5 模型"""
     url = "https://api.siliconflow.cn/v1/chat/completions"
